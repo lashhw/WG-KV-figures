@@ -1,0 +1,17 @@
+tokens,method,component,size
+200K,Full,Model Weights,15.31651
+200K,Full,KV Cache,25.02627
+200K,WG-KV,Model Weights,15.38101
+200K,WG-KV,KV Cache,4.59381
+300K,Full,Model Weights,15.31651
+300K,Full,KV Cache,37.53237
+300K,WG-KV,Model Weights,15.38101
+300K,WG-KV,KV Cache,6.91604
+400K,Full,Model Weights,15.31651
+400K,Full,KV Cache,50.03848
+400K,WG-KV,Model Weights,15.38101
+400K,WG-KV,KV Cache,9.43141
+500K,Full,Model Weights,NA
+500K,Full,KV Cache,NA
+500K,WG-KV,Model Weights,NA
+500K,WG-KV,KV Cache,NA

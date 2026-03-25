@@ -1,0 +1,17 @@
+tokens,method,component,latency
+200K,Full,Non-Attention,18.7171
+200K,Full,Attention,65.9353
+200K,WG-KV,Non-Attention,22.6676
+200K,WG-KV,Attention,36.5211
+300K,Full,Non-Attention,18.8758
+300K,Full,Attention,102.2241
+300K,WG-KV,Non-Attention,23.1435
+300K,WG-KV,Attention,54.722
+400K,Full,Non-Attention,18.8646
+400K,Full,Attention,133.7715
+400K,WG-KV,Non-Attention,23.1056
+400K,WG-KV,Attention,73.5177
+500K,Full,Non-Attention,NA
+500K,Full,Attention,NA
+500K,WG-KV,Non-Attention,NA
+500K,WG-KV,Attention,NA
