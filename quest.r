@@ -11,6 +11,18 @@ memory_access_scale <- num_kv_heads * num_hidden_layers * bytes_per_token / 1024
 data <- read_csv("data/quest.csv", show_col_types = FALSE) %>%
   mutate(method = fct_inorder(method))
 
+task_accuracy_score <- read_csv("data/integration.csv", show_col_types = FALSE) %>%
+  filter(kv_attended == 2048, method %in% c("Quest Only", "WG-KV + Quest")) %>%
+  select(panel_title, method, score) %>%
+  pivot_wider(names_from = method, values_from = score) %>%
+  summarise(score = mean(`WG-KV + Quest` / `Quest Only`)) %>%
+  pull(score)
+
+task_accuracy_data <- tibble(
+  method = factor(c("Quest", "Quest with WG-KV"), levels = levels(data$method)),
+  score = c(1.0, task_accuracy_score)
+)
+
 make_stacked_plot <- function(data, title, bottom_col, top_col, y_label, legend_labels, value_scale = 1) {
   plot_data <- data %>%
     select(method, bottom = {{ bottom_col }}, top = {{ top_col }}) %>%
@@ -37,8 +49,8 @@ make_stacked_plot <- function(data, title, bottom_col, top_col, y_label, legend_
       )
     )
 
-  ggplot(plot_data, aes(x = method, y = value, fill = component)) +
-    geom_col(width = 0.8, position = position_stack(reverse = TRUE)) +
+  ggplot(plot_data, aes(x = method, y = value, fill = component, colour = component)) +
+    geom_col(width = 0.8, position = position_stack(reverse = TRUE), linewidth = 0.5) +
     geom_text(
       data = reduction_labels,
       aes(x = method, y = total_value, label = label),
@@ -55,13 +67,28 @@ make_stacked_plot <- function(data, title, bottom_col, top_col, y_label, legend_
         "top" = "#F8CECC"
       )
     ) +
+    scale_colour_manual(
+      values = c(
+        "bottom" = "#6C8EBF",
+        "top" = "#B85450"
+      )
+    ) +
     scale_x_discrete(labels = \(x) str_wrap(x, width = 14)) +
     scale_y_continuous(
       labels = scales::label_comma(),
       expand = expansion(mult = c(0, 0.14))
     ) +
     guides(
-      fill = guide_legend(reverse = FALSE, nrow = 2, byrow = TRUE)
+      fill = guide_legend(
+        reverse = FALSE,
+        nrow = 2,
+        byrow = TRUE,
+        override.aes = list(
+          linewidth = 0.5,
+          colour = c("#B85450", "#6C8EBF")
+        )
+      ),
+      colour = "none"
     ) +
     labs(
       title = title,
@@ -113,12 +140,19 @@ attention_latency_plot <- make_stacked_plot(
   legend_labels = c("KV Selection", "Attention on Selected KVs")
 )
 
-task_accuracy_plot <- ggplot(data, aes(x = method, y = score, fill = method)) +
-  geom_col(width = 0.8) +
+task_accuracy_plot <- ggplot(task_accuracy_data, aes(x = method, y = score, fill = method, colour = method)) +
+  geom_col(width = 0.8, linewidth = 0.5) +
   scale_fill_manual(
     values = c(
       "Quest" = "#D5E8D4",
       "Quest with WG-KV" = "#FFF2CC"
+    ),
+    guide = "none"
+  ) +
+  scale_colour_manual(
+    values = c(
+      "Quest" = "#82B366",
+      "Quest with WG-KV" = "#D79B00"
     ),
     guide = "none"
   ) +

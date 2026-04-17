@@ -1,3 +1,3 @@
-method,key_landmarks,stored_kvs,selected_kvs,select_time,attention_time,score
-Quest,25000,200000,4096,0.22142850875,0.03120790004,1.0
-Quest with WG-KV,8928,71420,4096,0.08532008171,0.03120790004,1.0
+method,key_landmarks,stored_kvs,selected_kvs,select_time,attention_time
+Quest,25000,200000,4096,0.22142850875,0.03120790004
+Quest with WG-KV,8928,71420,4096,0.08532008171,0.03120790004
