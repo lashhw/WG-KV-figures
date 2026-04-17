@@ -8,7 +8,7 @@ bytes_per_token <- 256
 memory_usage_scale <- num_kv_heads * num_hidden_layers * bytes_per_token / 1024 / 1024 / 1024
 memory_access_scale <- num_kv_heads * num_hidden_layers * bytes_per_token / 1024 / 1024 / 1024
 
-data <- read_csv("data/integration_new.csv", show_col_types = FALSE) %>%
+data <- read_csv("data/quest.csv", show_col_types = FALSE) %>%
   mutate(method = fct_inorder(method))
 
 make_stacked_plot <- function(data, title, bottom_col, top_col, y_label, legend_labels, value_scale = 1) {
@@ -143,4 +143,4 @@ fig <- memory_usage_plot + memory_access_plot +
   attention_latency_plot + task_accuracy_plot +
   plot_layout(ncol = 4)
 
-ggsave("integration_new.pdf", fig, width = 9, height = 4.2, units = "in")
+ggsave("quest.pdf", fig, width = 9, height = 4.2, units = "in")
