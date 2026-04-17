@@ -110,7 +110,7 @@ attention_latency_plot <- make_stacked_plot(
   bottom_col = attention_time,
   top_col = select_time,
   y_label = "Latency (ms)",
-  legend_labels = c("Select KV", "Attention on Selected KVs")
+  legend_labels = c("KV Selection", "Attention on Selected KVs")
 )
 
 task_accuracy_plot <- ggplot(data, aes(x = method, y = score, fill = method)) +
