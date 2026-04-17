@@ -1,7 +1,7 @@
 library(tidyverse)
 library(patchwork)
 
-method_priority <- c("Local Attention", "DuoAttention", "WG-KV")
+method_priority <- c("Local Attention", "DuoAttention", "AdaEA++", "WG-KV")
 
 data <- read_csv("data/benchmark.csv") %>%
   mutate(
@@ -38,15 +38,16 @@ fig_list <- map(seq_len(nrow(panel_info)), \(idx) {
   for (method_name in method_priority) {
     method_data <- panel_data %>% filter(method == method_name)
     plot <- plot +
-      geom_line(data = method_data, linewidth = 1) +
+      geom_line(data = method_data, linewidth = 0.7) +
       geom_point(data = method_data, size = 1.5)
   }
 
   plot +
     scale_colour_manual(
-      breaks = c("WG-KV", "DuoAttention", "Local Attention", "Full Attention"),
+      breaks = c("WG-KV", "AdaEA++", "DuoAttention", "Local Attention", "Full Attention"),
       values = c(
         "WG-KV" = "#6C8EBF",
+        "AdaEA++" = "#50BFA5",
         "DuoAttention" = "#B85450",
         "Local Attention" = "#D6B656",
         "Full Attention" = "#666666"
@@ -55,6 +56,7 @@ fig_list <- map(seq_len(nrow(panel_info)), \(idx) {
     scale_shape_manual(
       values = c(
         "WG-KV" = 15,
+        "AdaEA++" = 18,
         "DuoAttention" = 17,
         "Local Attention" = 16
       )
@@ -66,7 +68,7 @@ fig_list <- map(seq_len(nrow(panel_info)), \(idx) {
     ) +
     guides(
       colour = guide_legend(
-        override.aes = list(linetype = "solid", linewidth = 1.5, size = 3, shape = c(15, 17, 16, NA)),
+        override.aes = list(linetype = "solid", linewidth = 1.5, size = 3, shape = c(15, 18, 17, 16, NA)),
         keywidth = 1.7
       ),
       shape = "none"
