@@ -7,9 +7,10 @@ bytes_per_token <- 256
 
 memory_usage_scale <- num_kv_heads * num_hidden_layers * bytes_per_token / 1024 / 1024 / 1024
 memory_access_scale <- num_kv_heads * num_hidden_layers * bytes_per_token / 1024 / 1024 / 1024
+method_levels <- c("Quest", "Quest with WG-KV")
 
 data <- read_csv("data/quest.csv", show_col_types = FALSE) %>%
-  mutate(method = fct_inorder(method))
+  mutate(method = factor(method, levels = method_levels))
 
 task_accuracy_score <- read_csv("data/integration.csv", show_col_types = FALSE) %>%
   filter(kv_attended == 2048, method %in% c("Quest Only", "WG-KV + Quest")) %>%
@@ -19,7 +20,7 @@ task_accuracy_score <- read_csv("data/integration.csv", show_col_types = FALSE) 
   pull(score)
 
 task_accuracy_data <- tibble(
-  method = factor(c("Quest", "Quest with WG-KV"), levels = levels(data$method)),
+  method = factor(c("Quest", "Quest with WG-KV"), levels = method_levels),
   score = c(1.0, task_accuracy_score)
 )
 
@@ -49,19 +50,19 @@ make_stacked_plot <- function(data, title, bottom_col, top_col, y_label, legend_
       )
     )
 
-  ggplot(plot_data, aes(x = method, y = value, fill = component, colour = component)) +
-    geom_col(width = 0.8, position = position_stack(reverse = TRUE), linewidth = 0.5) +
+  ggplot(plot_data, aes(y = method, x = value, fill = component, colour = component)) +
+    geom_col(width = 0.6, position = position_stack(reverse = TRUE), linewidth = 0.5) +
     geom_text(
       data = reduction_labels,
-      aes(x = method, y = total_value, label = label),
-      vjust = -0.6,
+      aes(y = method, x = total_value, label = label),
+      hjust = -0.2,
       size = 4.2,
       colour = "black",
       inherit.aes = FALSE
     ) +
     scale_fill_manual(
-      breaks = c("top", "bottom"),
-      labels = legend_labels,
+      breaks = c("bottom", "top"),
+      labels = rev(legend_labels),
       values = c(
         "bottom" = "#DAE8FC",
         "top" = "#F8CECC"
@@ -73,27 +74,30 @@ make_stacked_plot <- function(data, title, bottom_col, top_col, y_label, legend_
         "top" = "#B85450"
       )
     ) +
-    scale_x_discrete(labels = \(x) str_wrap(x, width = 14)) +
-    scale_y_continuous(
+    scale_y_discrete(
+      limits = rev(method_levels),
+      labels = \(x) str_wrap(x, width = 14)
+    ) +
+    scale_x_continuous(
       labels = scales::label_comma(),
       expand = expansion(mult = c(0, 0.14))
     ) +
     guides(
       fill = guide_legend(
         reverse = FALSE,
-        nrow = 2,
+        nrow = 1,
         byrow = TRUE,
         override.aes = list(
           linewidth = 0.5,
-          colour = c("#B85450", "#6C8EBF")
+          colour = c("#6C8EBF", "#B85450")
         )
       ),
       colour = "none"
     ) +
     labs(
       title = title,
-      x = NULL,
-      y = y_label,
+      x = y_label,
+      y = NULL,
       fill = NULL
     ) +
     coord_cartesian(clip = "off") +
@@ -103,11 +107,14 @@ make_stacked_plot <- function(data, title, bottom_col, top_col, y_label, legend_
       axis.title.x = element_text(size = 13, colour = "black"),
       axis.title.y = element_text(size = 13, colour = "black"),
       axis.text.x = element_text(size = 11, colour = "black"),
-      axis.text.y = element_text(size = 11, colour = "black"),
+      axis.text.y = element_text(size = 13, colour = "black"),
       legend.position = "top",
-      legend.text = element_text(size = 12),
+      legend.text = element_text(size = 13),
+      legend.key.width = grid::unit(0.8, "lines"),
+      legend.key.height = grid::unit(0.6, "lines"),
       panel.grid.minor = element_blank(),
-      panel.grid.major.x = element_blank()
+      panel.grid.major.y = element_blank(),
+      plot.margin = margin(0, 100, 0, 0)
     )
 }
 
@@ -123,7 +130,7 @@ memory_usage_plot <- make_stacked_plot(
 
 memory_access_plot <- make_stacked_plot(
   data = data,
-  title = "Decode-Time\nMemory Access",
+  title = "Decode-Time Memory Access",
   bottom_col = selected_kvs,
   top_col = key_landmarks,
   y_label = "Per-Query KV Cache Read (GB)",
@@ -133,15 +140,15 @@ memory_access_plot <- make_stacked_plot(
 
 attention_latency_plot <- make_stacked_plot(
   data = data,
-  title = "Decode-Time\nAttention Latency",
+  title = "Decode-Time Attention Latency",
   bottom_col = attention_time,
   top_col = select_time,
   y_label = "Latency (ms)",
-  legend_labels = c("KV Selection", "Attention on Selected KVs")
+  legend_labels = c("Select KVs", "Attn on Selected KVs")
 )
 
-task_accuracy_plot <- ggplot(task_accuracy_data, aes(x = method, y = score, fill = method, colour = method)) +
-  geom_col(width = 0.8, linewidth = 0.5) +
+task_accuracy_plot <- ggplot(task_accuracy_data, aes(y = method, x = score, fill = method, colour = method)) +
+  geom_col(width = 0.6, linewidth = 0.5) +
   scale_fill_manual(
     values = c(
       "Quest" = "#D5E8D4",
@@ -156,11 +163,14 @@ task_accuracy_plot <- ggplot(task_accuracy_data, aes(x = method, y = score, fill
     ),
     guide = "none"
   ) +
-  scale_x_discrete(labels = \(x) str_wrap(x, width = 14)) +
+  scale_y_discrete(
+    limits = rev(method_levels),
+    labels = \(x) str_wrap(x, width = 14)
+  ) +
   labs(
     title = "Task Accuracy",
-    x = NULL,
-    y = "Relative Score"
+    x = "Relative Score",
+    y = NULL
   ) +
   theme_minimal(base_size = 16) +
   theme(
@@ -168,13 +178,14 @@ task_accuracy_plot <- ggplot(task_accuracy_data, aes(x = method, y = score, fill
     axis.title.x = element_text(size = 13, colour = "black"),
     axis.title.y = element_text(size = 13, colour = "black"),
     axis.text.x = element_text(size = 11, colour = "black"),
-    axis.text.y = element_text(size = 11, colour = "black"),
+    axis.text.y = element_text(size = 13, colour = "black"),
     panel.grid.minor = element_blank(),
-    panel.grid.major.x = element_blank()
+    panel.grid.major.y = element_blank(),
+    plot.margin = margin(0, 100, 0, 0)
   )
 
 fig <- memory_usage_plot + memory_access_plot +
   attention_latency_plot + task_accuracy_plot +
-  plot_layout(ncol = 4)
+  plot_layout(ncol = 1)
 
-ggsave("quest.pdf", fig, width = 9, height = 4.2, units = "in")
+ggsave("quest.pdf", fig, width = 5, height = 8, units = "in")
