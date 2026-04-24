@@ -1,6 +1,7 @@
 library(tidyverse)
 
 data <- read_csv("data/perf_3.csv") %>%
+  filter(tokens %in% c("100K", "200K", "300K", "400K")) %>%
   mutate(
     tokens = fct_inorder(tokens),
     method = fct_relevel(method, "WG-KV", "Full"),
