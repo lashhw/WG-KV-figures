@@ -1,9 +1,9 @@
 tokens,component,memory
-100K,Model Weights,14.9575
-100K,KV Cache,12.2267
-200K,Model Weights,14.9575
-200K,KV Cache,24.4397
-300K,Model Weights,14.9575
-300K,KV Cache,36.6527
-400K,Model Weights,14.9575
-400K,KV Cache,48.8657
+100K,Model Weights,15.31651
+100K,KV Cache,12.54417
+200K,Model Weights,15.31651
+200K,KV Cache,25.05027
+300K,Model Weights,15.31651
+300K,KV Cache,37.55637
+400K,Model Weights,15.31651
+400K,KV Cache,50.06248
