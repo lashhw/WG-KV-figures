@@ -12,7 +12,7 @@ fig <- ggplot(data, aes(x = latency, y = tokens, fill = component, colour = comp
   geom_text(
     data = data %>% filter(component == "Attention"),
     aes(
-      x = 0.97,
+      x = 0.98,
       y = tokens,
       label = scales::percent(latency, accuracy = 1)
     ),
@@ -47,4 +47,4 @@ fig <- ggplot(data, aes(x = latency, y = tokens, fill = component, colour = comp
     panel.grid.major.y = element_blank(),
   )
 
-ggsave("breakdown_1.pdf", fig, width = 7.4, height = 4.0, units = "in")
+ggsave("breakdown_1.pdf", fig, width = 7.4, height = 3.7, units = "in")

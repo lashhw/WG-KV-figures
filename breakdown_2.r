@@ -26,4 +26,4 @@ fig <- ggplot(data, aes(x = memory, y = tokens, fill = component, colour = compo
     panel.grid.major.y = element_blank(),
   )
 
-ggsave("breakdown_2.pdf", fig, width = 3.7, height = 3.92, units = "in")
+ggsave("breakdown_2.pdf", fig, width = 3.7, height = 3.623, units = "in")
