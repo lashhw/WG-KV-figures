@@ -55,11 +55,11 @@ fig <- ggplot(data, aes(x = size, y = method, fill = component, colour = compone
     axis.title.y = element_text(size = 22),
     axis.text.x = element_text(size = 16, colour = "black"),
     axis.text.y = element_text(size = 18, colour = "black"),
-    strip.text.y = element_text(size = 21),
+    strip.text.y = element_text(size = 19),
     strip.placement = "outside",
     panel.spacing = unit(0, "cm"),
     panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
   )
 
-ggsave("perf_3.pdf", fig, width = 6.2, height = 5.24, units = "in")
+ggsave("perf_3.pdf", fig, width = 6.2, height = 4.95, units = "in")

@@ -56,11 +56,11 @@ fig <- ggplot(data, aes(x = latency, y = method, fill = component, colour = comp
     axis.title.y = element_text(size = 22),
     axis.text.x = element_text(size = 16, colour = "black"),
     axis.text.y = element_text(size = 18, colour = "black"),
-    strip.text.y = element_text(size = 21),
+    strip.text.y = element_text(size = 19),
     strip.placement = "outside",
     panel.spacing = unit(0, "cm"),
     panel.grid.major.y = element_blank(),
     panel.grid.minor.y = element_blank(),
   )
 
-ggsave("perf_1.pdf", fig, width = 5.5, height = 5.0, units = "in")
+ggsave("perf_1.pdf", fig, width = 5.5, height = 4.7, units = "in")
