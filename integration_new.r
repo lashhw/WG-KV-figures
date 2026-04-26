@@ -57,7 +57,7 @@ fig_list <- map(seq_len(nrow(panel_info)), \(idx) {
       colour = "none"
     ) +
     labs(
-      x = "# KV Attended / Token",
+      x = "# KV Selected / Query",
       y = axis_label,
       title = panel_label
     ) +
