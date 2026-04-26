@@ -1,211 +1,113 @@
 panel_title,y_label,kv_attended,method,score
-Natural Questions,Accuracy,10512.3986458333,WG-KV + Quest,57.5
-Natural Questions,Accuracy,8192,WG-KV + Quest,57.3333333333333
-Natural Questions,Accuracy,4096,WG-KV + Quest,58.8333333333333
-Natural Questions,Accuracy,2048,WG-KV + Quest,58.8333333333333
-Natural Questions,Accuracy,1024,WG-KV + Quest,57
-Natural Questions,Accuracy,512,WG-KV + Quest,54.3333333333333
-Natural Questions,Accuracy,320,WG-KV + Quest,38.1666666666667
-Natural Questions,Accuracy,27281.49,Quest Only,58
-Natural Questions,Accuracy,16384,Quest Only,58.5
-Natural Questions,Accuracy,8192,Quest Only,57.6666666666667
+Natural Questions,Accuracy,4096,WG-KV + Quest,57.3333333333333
+Natural Questions,Accuracy,2048,WG-KV + Quest,57.8333333333333
+Natural Questions,Accuracy,1024,WG-KV + Quest,59.1666666666667
+Natural Questions,Accuracy,512,WG-KV + Quest,52.1666666666667
 Natural Questions,Accuracy,4096,Quest Only,58.1666666666667
 Natural Questions,Accuracy,2048,Quest Only,59.5
 Natural Questions,Accuracy,1024,Quest Only,56.5
 Natural Questions,Accuracy,512,Quest Only,52.5
-Natural Questions,Accuracy,320,Quest Only,37.3333333333333
-TriviaQA,Accuracy,10595.4561458333,WG-KV + Quest,88.8333333333333
-TriviaQA,Accuracy,8192,WG-KV + Quest,88.8333333333333
-TriviaQA,Accuracy,4096,WG-KV + Quest,89
-TriviaQA,Accuracy,2048,WG-KV + Quest,89.3333333333333
-TriviaQA,Accuracy,1024,WG-KV + Quest,89
-TriviaQA,Accuracy,512,WG-KV + Quest,88.1666666666667
-TriviaQA,Accuracy,320,WG-KV + Quest,81.6666666666667
-TriviaQA,Accuracy,27346.72,Quest Only,89.3333333333333
-TriviaQA,Accuracy,16384,Quest Only,89.1666666666667
-TriviaQA,Accuracy,8192,Quest Only,89.6666666666667
+TriviaQA,Accuracy,4096,WG-KV + Quest,90.5
+TriviaQA,Accuracy,2048,WG-KV + Quest,90.6666666666667
+TriviaQA,Accuracy,1024,WG-KV + Quest,90.1666666666667
+TriviaQA,Accuracy,512,WG-KV + Quest,89.5
 TriviaQA,Accuracy,4096,Quest Only,89.3333333333333
 TriviaQA,Accuracy,2048,Quest Only,89.3333333333333
 TriviaQA,Accuracy,1024,Quest Only,90
 TriviaQA,Accuracy,512,Quest Only,89
-TriviaQA,Accuracy,320,Quest Only,79
-PopQA,Accuracy,9329.77125,WG-KV + Quest,60.3333333333333
-PopQA,Accuracy,8192,WG-KV + Quest,60.1666666666667
-PopQA,Accuracy,4096,WG-KV + Quest,60.3333333333333
+PopQA,Accuracy,4096,WG-KV + Quest,59.8333333333333
 PopQA,Accuracy,2048,WG-KV + Quest,59.5
-PopQA,Accuracy,1024,WG-KV + Quest,59.8333333333333
-PopQA,Accuracy,512,WG-KV + Quest,60.5
-PopQA,Accuracy,320,WG-KV + Quest,58.8333333333333
-PopQA,Accuracy,24270.15,Quest Only,60.5
-PopQA,Accuracy,16384,Quest Only,60.3333333333333
-PopQA,Accuracy,8192,Quest Only,60.1666666666667
+PopQA,Accuracy,1024,WG-KV + Quest,59.6666666666667
+PopQA,Accuracy,512,WG-KV + Quest,60.1666666666667
 PopQA,Accuracy,4096,Quest Only,60
 PopQA,Accuracy,2048,Quest Only,60.3333333333333
 PopQA,Accuracy,1024,Quest Only,59.8333333333333
 PopQA,Accuracy,512,Quest Only,60.3333333333333
-PopQA,Accuracy,320,Quest Only,56.6666666666667
-HotpotQA,Accuracy,10584.219375,WG-KV + Quest,57.6666666666667
-HotpotQA,Accuracy,8192,WG-KV + Quest,58.3333333333333
-HotpotQA,Accuracy,4096,WG-KV + Quest,58.3333333333333
-HotpotQA,Accuracy,2048,WG-KV + Quest,57.6666666666667
-HotpotQA,Accuracy,1024,WG-KV + Quest,56.6666666666667
-HotpotQA,Accuracy,512,WG-KV + Quest,52
-HotpotQA,Accuracy,320,WG-KV + Quest,41.6666666666667
-HotpotQA,Accuracy,27027.26,Quest Only,58.6666666666667
-HotpotQA,Accuracy,16384,Quest Only,58.6666666666667
-HotpotQA,Accuracy,8192,Quest Only,58.6666666666667
+HotpotQA,Accuracy,4096,WG-KV + Quest,60
+HotpotQA,Accuracy,2048,WG-KV + Quest,59
+HotpotQA,Accuracy,1024,WG-KV + Quest,58.6666666666667
+HotpotQA,Accuracy,512,WG-KV + Quest,56
 HotpotQA,Accuracy,4096,Quest Only,58.3333333333333
 HotpotQA,Accuracy,2048,Quest Only,57.6666666666667
 HotpotQA,Accuracy,1024,Quest Only,56.6666666666667
 HotpotQA,Accuracy,512,Quest Only,51.3333333333333
-HotpotQA,Accuracy,320,Quest Only,44
-NarrativeQA,GPT-4.1 Score,9153.386875,WG-KV + Quest,1.27
-NarrativeQA,GPT-4.1 Score,8192,WG-KV + Quest,1.3
-NarrativeQA,GPT-4.1 Score,4096,WG-KV + Quest,1.31
-NarrativeQA,GPT-4.1 Score,2048,WG-KV + Quest,1.33
-NarrativeQA,GPT-4.1 Score,1024,WG-KV + Quest,1.31
+NarrativeQA,GPT-4.1 Score,4096,WG-KV + Quest,1.3
+NarrativeQA,GPT-4.1 Score,2048,WG-KV + Quest,1.3
+NarrativeQA,GPT-4.1 Score,1024,WG-KV + Quest,1.27
 NarrativeQA,GPT-4.1 Score,512,WG-KV + Quest,1.29
-NarrativeQA,GPT-4.1 Score,320,WG-KV + Quest,1.11
-NarrativeQA,GPT-4.1 Score,28090.98,Quest Only,1.3
-NarrativeQA,GPT-4.1 Score,16384,Quest Only,1.3
-NarrativeQA,GPT-4.1 Score,8192,Quest Only,1.25
 NarrativeQA,GPT-4.1 Score,4096,Quest Only,1.25
 NarrativeQA,GPT-4.1 Score,2048,Quest Only,1.29
 NarrativeQA,GPT-4.1 Score,1024,Quest Only,1.22
 NarrativeQA,GPT-4.1 Score,512,Quest Only,1.33
-NarrativeQA,GPT-4.1 Score,320,Quest Only,1
-InfiniteBench QA,F1,9451.595,WG-KV + Quest,35.1057992987405
-InfiniteBench QA,F1,8192,WG-KV + Quest,35.2244140173552
-InfiniteBench QA,F1,4096,WG-KV + Quest,34.1038012967425
-InfiniteBench QA,F1,2048,WG-KV + Quest,35.2126924056336
-InfiniteBench QA,F1,1024,WG-KV + Quest,33.3880892310304
-InfiniteBench QA,F1,512,WG-KV + Quest,33.2592125521537
-InfiniteBench QA,F1,320,WG-KV + Quest,27.1363837143249
-InfiniteBench QA,F1,29148.81,Quest Only,33.51338534015
-InfiniteBench QA,F1,16384,Quest Only,33.9160410178057
-InfiniteBench QA,F1,8192,Quest Only,33.4392511410158
+InfiniteBench QA,F1,4096,WG-KV + Quest,35.8620867576111
+InfiniteBench QA,F1,2048,WG-KV + Quest,35.8247130202373
+InfiniteBench QA,F1,1024,WG-KV + Quest,36.391260482437
+InfiniteBench QA,F1,512,WG-KV + Quest,34.3408997320762
 InfiniteBench QA,F1,4096,Quest Only,32.8831405849053
 InfiniteBench QA,F1,2048,Quest Only,32.3922314939962
 InfiniteBench QA,F1,1024,Quest Only,32.1382143999791
 InfiniteBench QA,F1,512,Quest Only,31.2669301286948
-InfiniteBench QA,F1,320,Quest Only,27.0195459339422
-InfiniteBench MC,Accuracy,9427.79875,WG-KV + Quest,51
-InfiniteBench MC,Accuracy,8192,WG-KV + Quest,51
-InfiniteBench MC,Accuracy,4096,WG-KV + Quest,51
-InfiniteBench MC,Accuracy,2048,WG-KV + Quest,51
-InfiniteBench MC,Accuracy,1024,WG-KV + Quest,51
-InfiniteBench MC,Accuracy,512,WG-KV + Quest,51
-InfiniteBench MC,Accuracy,256,WG-KV + Quest,18
-InfiniteBench MC,Accuracy,29286.28,Quest Only,53
-InfiniteBench MC,Accuracy,16384,Quest Only,53
-InfiniteBench MC,Accuracy,8192,Quest Only,53
+InfiniteBench MC,Accuracy,4096,WG-KV + Quest,46
+InfiniteBench MC,Accuracy,2048,WG-KV + Quest,46
+InfiniteBench MC,Accuracy,1024,WG-KV + Quest,46
+InfiniteBench MC,Accuracy,512,WG-KV + Quest,46
 InfiniteBench MC,Accuracy,4096,Quest Only,53
 InfiniteBench MC,Accuracy,2048,Quest Only,53
 InfiniteBench MC,Accuracy,1024,Quest Only,53
 InfiniteBench MC,Accuracy,512,Quest Only,53
-InfiniteBench MC,Accuracy,256,Quest Only,20
-MS MACRO,NDCG@10,8871.78302845528,WG-KV + Quest,41.4316016260163
-MS MACRO,NDCG@10,8192,WG-KV + Quest,40.5252682926829
-MS MACRO,NDCG@10,4096,WG-KV + Quest,39.4197317073171
-MS MACRO,NDCG@10,2048,WG-KV + Quest,34.5003333333333
-MS MACRO,NDCG@10,1024,WG-KV + Quest,29.6817804878049
-MS MACRO,NDCG@10,512,WG-KV + Quest,17.4581707317073
-MS MACRO,NDCG@10,320,WG-KV + Quest,5.31870731707317
-MS MACRO,NDCG@10,25763.1544715447,Quest Only,42.787837398374
-MS MACRO,NDCG@10,16384,Quest Only,42.7099268292683
-MS MACRO,NDCG@10,8192,Quest Only,42.1367398373984
+MS MACRO,NDCG@10,4096,WG-KV + Quest,35.3773089430894
+MS MACRO,NDCG@10,2048,WG-KV + Quest,33.5873414634146
+MS MACRO,NDCG@10,1024,WG-KV + Quest,27.5267723577236
+MS MACRO,NDCG@10,512,WG-KV + Quest,18.6344146341463
 MS MACRO,NDCG@10,4096,Quest Only,39.8484552845528
 MS MACRO,NDCG@10,2048,Quest Only,37.0299024390244
 MS MACRO,NDCG@10,1024,Quest Only,29.386081300813
 MS MACRO,NDCG@10,512,Quest Only,18.3528211382114
-MS MACRO,NDCG@10,320,Quest Only,6.89788617886179
-InfiniteBench Sum,GPT-4.1 F1,10050.25875,WG-KV + Quest,0.162959070676889
-InfiniteBench Sum,GPT-4.1 F1,8192,WG-KV + Quest,0.152703049646694
-InfiniteBench Sum,GPT-4.1 F1,4096,WG-KV + Quest,0.152193767600675
-InfiniteBench Sum,GPT-4.1 F1,2048,WG-KV + Quest,0.145236176473948
-InfiniteBench Sum,GPT-4.1 F1,1024,WG-KV + Quest,0.113580507641982
-InfiniteBench Sum,GPT-4.1 F1,512,WG-KV + Quest,0.0504978860443694
-InfiniteBench Sum,GPT-4.1 F1,320,WG-KV + Quest,0.0122759993520813
-InfiniteBench Sum,GPT-4.1 F1,30545.24,Quest Only,0.154791219875634
-InfiniteBench Sum,GPT-4.1 F1,16384,Quest Only,0.147997578666314
-InfiniteBench Sum,GPT-4.1 F1,8192,Quest Only,0.151385737818077
+InfiniteBench Sum,GPT-4.1 F1,4096,WG-KV + Quest,0.163882984712397
+InfiniteBench Sum,GPT-4.1 F1,2048,WG-KV + Quest,0.143805413963712
+InfiniteBench Sum,GPT-4.1 F1,1024,WG-KV + Quest,0.117477964461104
+InfiniteBench Sum,GPT-4.1 F1,512,WG-KV + Quest,0.0736242998766314
 InfiniteBench Sum,GPT-4.1 F1,4096,Quest Only,0.125214044886786
 InfiniteBench Sum,GPT-4.1 F1,2048,Quest Only,0.107274653450883
 InfiniteBench Sum,GPT-4.1 F1,1024,Quest Only,0.101180776152935
 InfiniteBench Sum,GPT-4.1 F1,512,Quest Only,0.0562005305571462
-InfiniteBench Sum,GPT-4.1 F1,320,Quest Only,0.0113279003051365
-Multi-LexSum,GPT-4.1 F1,10019.764375,WG-KV + Quest,0.433284302655821
-Multi-LexSum,GPT-4.1 F1,8192,WG-KV + Quest,0.443785960538385
-Multi-LexSum,GPT-4.1 F1,4096,WG-KV + Quest,0.448869966182257
-Multi-LexSum,GPT-4.1 F1,2048,WG-KV + Quest,0.431684860424787
-Multi-LexSum,GPT-4.1 F1,1024,WG-KV + Quest,0.447592107409451
-Multi-LexSum,GPT-4.1 F1,512,WG-KV + Quest,0.389366494446677
-Multi-LexSum,GPT-4.1 F1,320,WG-KV + Quest,0.189160422108523
-Multi-LexSum,GPT-4.1 F1,25363.88,Quest Only,0.429308720799446
-Multi-LexSum,GPT-4.1 F1,16384,Quest Only,0.451730834755438
-Multi-LexSum,GPT-4.1 F1,8192,Quest Only,0.417857084882392
+Multi-LexSum,GPT-4.1 F1,4096,WG-KV + Quest,0.467647881805347
+Multi-LexSum,GPT-4.1 F1,2048,WG-KV + Quest,0.45304158714141
+Multi-LexSum,GPT-4.1 F1,1024,WG-KV + Quest,0.420182224597874
+Multi-LexSum,GPT-4.1 F1,512,WG-KV + Quest,0.387255464913255
 Multi-LexSum,GPT-4.1 F1,4096,Quest Only,0.44442171009699
 Multi-LexSum,GPT-4.1 F1,2048,Quest Only,0.438470349251127
 Multi-LexSum,GPT-4.1 F1,1024,Quest Only,0.402109035892696
 Multi-LexSum,GPT-4.1 F1,512,Quest Only,0.351536119964778
-Multi-LexSum,GPT-4.1 F1,320,Quest Only,0.206807055171249
-TREC Fine,Accuracy,9533.9485,WG-KV + Quest,54.4
-TREC Fine,Accuracy,8192,WG-KV + Quest,56
-TREC Fine,Accuracy,4096,WG-KV + Quest,56
-TREC Fine,Accuracy,2048,WG-KV + Quest,54.8
-TREC Fine,Accuracy,1024,WG-KV + Quest,51.8
-TREC Fine,Accuracy,512,WG-KV + Quest,47.6
-TREC Fine,Accuracy,320,WG-KV + Quest,39.2
-TREC Fine,Accuracy,25991.648,Quest Only,55.8
-TREC Fine,Accuracy,16384,Quest Only,56.4
-TREC Fine,Accuracy,8192,Quest Only,56.2
+TREC Fine,Accuracy,4096,WG-KV + Quest,56.4
+TREC Fine,Accuracy,2048,WG-KV + Quest,55.6
+TREC Fine,Accuracy,1024,WG-KV + Quest,54.6
+TREC Fine,Accuracy,512,WG-KV + Quest,50.6
 TREC Fine,Accuracy,4096,Quest Only,55
 TREC Fine,Accuracy,2048,Quest Only,53.2
 TREC Fine,Accuracy,1024,Quest Only,51
 TREC Fine,Accuracy,512,Quest Only,46.2
-TREC Fine,Accuracy,320,Quest Only,42
-NLU,Accuracy,9830.646375,WG-KV + Quest,86.6
-NLU,Accuracy,8192,WG-KV + Quest,86.8
 NLU,Accuracy,4096,WG-KV + Quest,85.6
-NLU,Accuracy,2048,WG-KV + Quest,83.8
-NLU,Accuracy,1024,WG-KV + Quest,81.4
-NLU,Accuracy,512,WG-KV + Quest,78.2
-NLU,Accuracy,320,WG-KV + Quest,67.8
-NLU,Accuracy,26373.036,Quest Only,86.4
-NLU,Accuracy,16384,Quest Only,86.8
-NLU,Accuracy,8192,Quest Only,87
+NLU,Accuracy,2048,WG-KV + Quest,84.2
+NLU,Accuracy,1024,WG-KV + Quest,81
+NLU,Accuracy,512,WG-KV + Quest,77.2
 NLU,Accuracy,4096,Quest Only,85.8
 NLU,Accuracy,2048,Quest Only,84.2
 NLU,Accuracy,1024,Quest Only,81.4
 NLU,Accuracy,512,Quest Only,77.6
-NLU,Accuracy,320,Quest Only,67
-BANKING77,Accuracy,8885.340375,WG-KV + Quest,82.8
-BANKING77,Accuracy,8192,WG-KV + Quest,83.8
-BANKING77,Accuracy,4096,WG-KV + Quest,85
-BANKING77,Accuracy,2048,WG-KV + Quest,84
-BANKING77,Accuracy,1024,WG-KV + Quest,82
-BANKING77,Accuracy,512,WG-KV + Quest,73.4
-BANKING77,Accuracy,320,WG-KV + Quest,55.8
-BANKING77,Accuracy,26587.252,Quest Only,86.2
-BANKING77,Accuracy,16384,Quest Only,86.2
-BANKING77,Accuracy,8192,Quest Only,84.8
+BANKING77,Accuracy,4096,WG-KV + Quest,82.8
+BANKING77,Accuracy,2048,WG-KV + Quest,82.8
+BANKING77,Accuracy,1024,WG-KV + Quest,79
+BANKING77,Accuracy,512,WG-KV + Quest,72.2
 BANKING77,Accuracy,4096,Quest Only,84
 BANKING77,Accuracy,2048,Quest Only,83
 BANKING77,Accuracy,1024,Quest Only,80.2
 BANKING77,Accuracy,512,Quest Only,75.2
-BANKING77,Accuracy,320,Quest Only,61.2
-CLINC150,Accuracy,9065.269625,WG-KV + Quest,92.2
-CLINC150,Accuracy,8192,WG-KV + Quest,92.2
-CLINC150,Accuracy,4096,WG-KV + Quest,91.6
-CLINC150,Accuracy,2048,WG-KV + Quest,90.6
-CLINC150,Accuracy,1024,WG-KV + Quest,88.6
-CLINC150,Accuracy,512,WG-KV + Quest,83.6
-CLINC150,Accuracy,320,WG-KV + Quest,63.2
-CLINC150,Accuracy,26362.426,Quest Only,92.6
-CLINC150,Accuracy,16384,Quest Only,92
-CLINC150,Accuracy,8192,Quest Only,93.2
+CLINC150,Accuracy,4096,WG-KV + Quest,90.8
+CLINC150,Accuracy,2048,WG-KV + Quest,90.2
+CLINC150,Accuracy,1024,WG-KV + Quest,87.2
+CLINC150,Accuracy,512,WG-KV + Quest,82
 CLINC150,Accuracy,4096,Quest Only,92.6
 CLINC150,Accuracy,2048,Quest Only,91.4
 CLINC150,Accuracy,1024,Quest Only,90
 CLINC150,Accuracy,512,Quest Only,84.8
-CLINC150,Accuracy,320,Quest Only,69
