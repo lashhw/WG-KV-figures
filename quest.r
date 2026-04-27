@@ -143,7 +143,7 @@ attention_latency_plot <- make_stacked_plot(
   title = "Decode-Time Attention Latency",
   bottom_col = attention_time,
   top_col = select_time,
-  y_label = "Latency (ms)",
+  y_label = "Latency (us)",
   legend_labels = c("Select KVs", "Attn on Selected KVs")
 )
 
