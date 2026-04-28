@@ -120,7 +120,7 @@ make_stacked_plot <- function(data, title, bottom_col, top_col, y_label, legend_
 
 memory_usage_plot <- make_stacked_plot(
   data = data,
-  title = "Memory Usage",
+  title = "(a) Memory Usage",
   bottom_col = stored_kvs,
   top_col = key_landmarks,
   y_label = "KV Cache Size (GB)",
@@ -130,7 +130,7 @@ memory_usage_plot <- make_stacked_plot(
 
 memory_access_plot <- make_stacked_plot(
   data = data,
-  title = "Decode-Time Memory Access",
+  title = "(b) Decode-Time Memory Access",
   bottom_col = selected_kvs,
   top_col = key_landmarks,
   y_label = "Per-Query KV Cache Read (GB)",
@@ -140,7 +140,7 @@ memory_access_plot <- make_stacked_plot(
 
 attention_latency_plot <- make_stacked_plot(
   data = data,
-  title = "Decode-Time Attention Latency",
+  title = "(c) Decode-Time Attention Latency",
   bottom_col = attention_time,
   top_col = select_time,
   y_label = "Latency (us)",
@@ -168,7 +168,7 @@ task_accuracy_plot <- ggplot(task_accuracy_data, aes(y = method, x = score, fill
     labels = \(x) str_wrap(x, width = 14)
   ) +
   labs(
-    title = "Task Accuracy",
+    title = "(d) Task Accuracy",
     x = "Relative Score",
     y = NULL
   ) +
