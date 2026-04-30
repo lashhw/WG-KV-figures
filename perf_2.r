@@ -31,7 +31,7 @@ fig <- ggplot(data, aes(x = latency, y = method, fill = component, colour = comp
     data = reduction_labels,
     aes(x = total_latency, y = method, label = label),
     hjust = -0.13,
-    size = 5.5,
+    size = 6,
     inherit.aes = FALSE
   ) +
   facet_grid(tokens ~ ., switch = "y") +
@@ -41,21 +41,25 @@ fig <- ggplot(data, aes(x = latency, y = method, fill = component, colour = comp
   scale_colour_manual(
     values = c("Non-Attention" = "#6C8EBF", "Attention" = "#B85450"),
   ) +
+  guides(
+    fill = guide_legend(nrow = 2, byrow = TRUE),
+    colour = guide_legend(nrow = 2, byrow = TRUE)
+  ) +
   labs(
     title = "(b) Decode Latency",
-    x = "Time per Output Token (ms)",
+    x = "TPOT (ms)",
     y = "Sequence Length",
   ) +
   theme_minimal(base_size = 18) +
   theme(
     plot.title = element_text(size = 24, hjust = 0.5, face = "bold"),
-    plot.margin = margin(0, 50, 0, 0),
     legend.position = "top",
     legend.title = element_blank(),
-    legend.text = element_text(size = 19),
-    axis.title.y = element_text(size = 22),
+    legend.text = element_text(size = 21),
+    axis.title.x = element_text(size = 21),
+    axis.title.y = element_text(size = 23),
     axis.text.x = element_text(size = 16, colour = "black"),
-    axis.text.y = element_text(size = 18, colour = "black"),
+    axis.text.y = element_text(size = 19, colour = "black"),
     strip.text.y = element_text(size = 19),
     strip.placement = "outside",
     panel.spacing = unit(0, "cm"),
@@ -63,4 +67,4 @@ fig <- ggplot(data, aes(x = latency, y = method, fill = component, colour = comp
     panel.grid.minor.y = element_blank(),
   )
 
-ggsave("perf_2.pdf", fig, width = 5.5, height = 4.7, units = "in")
+ggsave("perf_2.pdf", fig, width = 5.1, height = 5.2, units = "in")

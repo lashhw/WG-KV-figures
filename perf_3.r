@@ -31,7 +31,7 @@ fig <- ggplot(data, aes(x = size, y = method, fill = component, colour = compone
     data = reduction_labels,
     aes(x = total_latency, y = method, label = label),
     hjust = -0.13,
-    size = 5.5,
+    size = 6,
     inherit.aes = FALSE
   ) +
   facet_grid(tokens ~ ., switch = "y") +
@@ -40,6 +40,10 @@ fig <- ggplot(data, aes(x = size, y = method, fill = component, colour = compone
   ) +
   scale_colour_manual(
     values = c("Model Weights" = "#6C8EBF", "KV Cache" = "#B85450"),
+  ) +
+  guides(
+    fill = guide_legend(nrow = 2, byrow = TRUE),
+    colour = guide_legend(nrow = 2, byrow = TRUE)
   ) +
   labs(
     title = "(c) Memory Usage",
@@ -51,10 +55,11 @@ fig <- ggplot(data, aes(x = size, y = method, fill = component, colour = compone
     plot.title = element_text(size = 24, hjust = 0.5, face = "bold"),
     legend.position = "top",
     legend.title = element_blank(),
-    legend.text = element_text(size = 19),
-    axis.title.y = element_text(size = 22),
+    legend.text = element_text(size = 21),
+    axis.title.x = element_text(size = 21),
+    axis.title.y = element_text(size = 23),
     axis.text.x = element_text(size = 16, colour = "black"),
-    axis.text.y = element_text(size = 18, colour = "black"),
+    axis.text.y = element_text(size = 19, colour = "black"),
     strip.text.y = element_text(size = 19),
     strip.placement = "outside",
     panel.spacing = unit(0, "cm"),
@@ -62,4 +67,4 @@ fig <- ggplot(data, aes(x = size, y = method, fill = component, colour = compone
     panel.grid.minor.y = element_blank(),
   )
 
-ggsave("perf_3.pdf", fig, width = 6.2, height = 4.95, units = "in")
+ggsave("perf_3.pdf", fig, width = 5.1, height = 5.45, units = "in")
