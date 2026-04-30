@@ -24,27 +24,33 @@ fig <- ggplot(data, aes(x = latency, y = tokens, fill = component, colour = comp
   facet_grid(. ~ stage) +
   scale_fill_manual(
     values = c("Non-Attention" = "#DAE8FC", "Attention" = "#F8CECC"),
-    labels = c("Non-Attention" = "Non-Attention (MLP, QKV Proj, etc.)", "Attention" = "Attention"),
+    labels = c("Non-Attention" = "Non-Attention (FFN, QKV Proj, etc.)", "Attention" = "Attention"),
   ) +
   scale_colour_manual(
     values = c("Non-Attention" = "#6C8EBF", "Attention" = "#B85450"),
-    labels = c("Non-Attention" = "Non-Attention (MLP, QKV Proj, etc.)", "Attention" = "Attention"),
+    labels = c("Non-Attention" = "Non-Attention (FFN, QKV Proj, etc.)", "Attention" = "Attention"),
   ) +
   scale_x_continuous(
     limits = c(0, 1),
     breaks = c(0, 0.25, 0.5, 0.75, 1),
     labels = c("0", "0.25", "0.5", "0.75", "1"),
   ) +
+  guides(
+    fill = guide_legend(nrow = 2, byrow = TRUE),
+    colour = guide_legend(nrow = 2, byrow = TRUE)
+  ) +
   labs(x = "Normalized Time", y = "Sequence Length") +
   theme_minimal(base_size = 18) +
   theme(
     strip.text = element_text(size = 21, face = "bold"),
+    strip.clip = "off",
     legend.position = "top",
     legend.title = element_blank(),
-    legend.text = element_text(size = 18),
+    legend.text = element_text(size = 20),
+    axis.title.y = element_text(size = 20),
     axis.text.x = element_text(size = 16, colour = "black"),
     axis.text.y = element_text(size = 20, colour = "black"),
     panel.grid.major.y = element_blank(),
   )
 
-ggsave("breakdown_1.pdf", fig, width = 7.4, height = 3.7, units = "in")
+ggsave("breakdown_1.pdf", fig, width = 6.7, height = 4, units = "in")
