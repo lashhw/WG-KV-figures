@@ -47,10 +47,11 @@ fig <- ggplot(data, aes(x = latency, y = tokens, fill = component, colour = comp
     legend.position = "top",
     legend.title = element_blank(),
     legend.text = element_text(size = 20),
+    axis.title.x = element_text(size = 20),
     axis.title.y = element_text(size = 20),
     axis.text.x = element_text(size = 16, colour = "black"),
     axis.text.y = element_text(size = 20, colour = "black"),
     panel.grid.major.y = element_blank(),
   )
 
-ggsave("breakdown_1.pdf", fig, width = 6.7, height = 4, units = "in")
+ggsave("breakdown_1.pdf", fig, width = 6.7, height = 4.1, units = "in")

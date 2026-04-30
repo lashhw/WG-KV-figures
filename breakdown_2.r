@@ -26,10 +26,11 @@ fig <- ggplot(data, aes(x = memory, y = tokens, fill = component, colour = compo
     legend.position = "top",
     legend.title = element_blank(),
     legend.text = element_text(size = 20),
+    axis.title.x = element_text(size = 20),
     axis.title.y = element_text(size = 20),
     axis.text.x = element_text(size = 16, colour = "black"),
     axis.text.y = element_blank(),
     panel.grid.major.y = element_blank(),
   )
 
-ggsave("breakdown_2.pdf", fig, width = 2.9, height = 3.92, units = "in")
+ggsave("breakdown_2.pdf", fig, width = 2.9, height = 4.025, units = "in")
